@@ -1,6 +1,5 @@
 #include "VideoFaceDetector.h"
 #include <iostream>
-#include <opencv2\imgproc.hpp>
 
 const double VideoFaceDetector::TICK_FREQUENCY = cv::getTickFrequency();
 

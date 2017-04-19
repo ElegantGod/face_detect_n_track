@@ -1,5 +1,5 @@
-#include <opencv2\highgui\highgui.hpp>
-#include <opencv2\imgproc\imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 #include "VideoFaceDetector.h"
 
@@ -23,9 +23,9 @@ int main(int argc, char** argv)
 	double fps = 0, time_per_frame;
 	while (true)
 	{
-		auto start = cv::getCPUTickCount();
+		long start = cv::getTickCount();
 		detector >> frame;
-		auto end = cv::getCPUTickCount();
+		long end = cv::getTickCount();
 
 		time_per_frame = (end - start) / cv::getTickFrequency();
 		fps = (15 * fps + (1 / time_per_frame)) / 16;
